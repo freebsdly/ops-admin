@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--app-layout-border-color);
+  /* color: var(--app-layout-border-color); */
   transition: all 0.2s ease;
 }
 

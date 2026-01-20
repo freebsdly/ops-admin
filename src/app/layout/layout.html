@@ -3,6 +3,7 @@
     <app-sider />
   </div>
   <app-collapse-button
+    [isCollapsed]="collapsed()"
     (toggle)="toggleCollapsed()"
     class="app-layout-collapse-button"
     [class.collapsed]="collapsed()"
