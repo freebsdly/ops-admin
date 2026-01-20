@@ -1,1 +1,3 @@
-/* No styles needed */
+:host {
+  display: block;
+}

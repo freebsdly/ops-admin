@@ -8,4 +8,6 @@
   --app-header-height: 48px;
   --app-footer-height: 48px;
   --app-content-padding: 12px;
+
+  --app-layout-border-color: rgb(250, 248, 248);
 }

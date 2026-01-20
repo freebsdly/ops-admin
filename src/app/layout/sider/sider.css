@@ -7,6 +7,7 @@
 .app-sider-header {
   height: var(--app-header-height);
   flex-shrink: 0;
+  border-bottom: 1px solid var(--app-layout-border-color);
 }
 
 .app-sider-content {
@@ -18,4 +19,5 @@
 .app-sider-footer {
   height: var(--app-footer-height);
   flex-shrink: 0;
+  border-top: 1px solid var(--app-layout-border-color);
 }
