@@ -3,11 +3,11 @@
 @import "tailwindcss";
 
 :root {
-  --app-layout-bg-color: lightgray;
+  --app-layout-bg-color: #f5f5f5;
   --app-sider-width: 248px;
   --app-header-height: 48px;
   --app-footer-height: 48px;
   --app-content-padding: 12px;
 
-  --app-layout-border-color: rgb(250, 248, 248);
+  --app-layout-border-color: #e5e7eb;
 }

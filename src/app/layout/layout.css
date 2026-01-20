@@ -19,6 +19,7 @@
 
 .app-layout-header {
   height: var(--app-header-height);
+  border-bottom: 1px solid var(--app-layout-border-color);
 }
 
 .app-layout-content {
@@ -28,4 +29,5 @@
 
 .app-layout-footer {
   height: var(--app-footer-height);
+  border-top: 1px solid var(--app-layout-border-color);
 }

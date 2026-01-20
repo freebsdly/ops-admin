@@ -1,3 +1,13 @@
 :host {
   display: block;
 }
+
+.app-layout-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-layout-footer-text {
+  font-weight: 600;
+}
