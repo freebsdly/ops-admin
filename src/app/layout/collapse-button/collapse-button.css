@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.collapse-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--app-layout-border-color);
+  background-color: var(--app-layout-bg-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--app-layout-border-color);
+  transition: all 0.2s ease;
+}
+
+.collapse-button:hover {
+  background-color: var(--app-layout-border-color);
+  color: var(--app-layout-bg-color);
+}
