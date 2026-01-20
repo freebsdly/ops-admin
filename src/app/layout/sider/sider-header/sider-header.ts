@@ -1,12 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-sider-header',
   imports: [],
   templateUrl: './sider-header.html',
   styleUrl: './sider-header.css',
-  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiderHeader {
-
+  readonly isCollapsed = input.required<boolean>();
 }

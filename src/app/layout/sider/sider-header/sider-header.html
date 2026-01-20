@@ -1,3 +1,5 @@
-<div class="app-sider-header-inner">
-  <p>sider-header works!</p>
-</div>
+@if (isCollapsed()) {
+  <img class="app-sider-logo" src="./logo-collapsed.svg" alt="Logo collapsed" />
+} @else {
+  <img class="app-sider-logo" src="./logo-expanded.svg" alt="Logo expanded" />
+}

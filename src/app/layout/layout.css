@@ -6,7 +6,7 @@
 
 .app-layout-sider {
   width: var(--app-sider-width);
-  overflow-y: hidden;
+  overflow: hidden;
   border-right: 1px solid var(--app-layout-border-color);
   position: relative;
   transition: width 0.2s ease;

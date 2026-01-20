@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SiderHeader } from './sider-header/sider-header';
 import { SiderContent } from './sider-content/sider-content';
 import { SiderFooter } from './sider-footer/sider-footer';
@@ -9,4 +9,6 @@ import { SiderFooter } from './sider-footer/sider-footer';
   templateUrl: './sider.html',
   styleUrl: './sider.css',
 })
-export class Sider {}
+export class Sider {
+  readonly isCollapsed = input.required<boolean>();
+}
