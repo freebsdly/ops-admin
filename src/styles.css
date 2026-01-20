@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+:root {
+  --app-layout-bg-color: lightgray;
+  --app-sider-width: 248px;
+  --app-header-height: 48px;
+  --app-footer-height: 48px;
+  --app-content-padding: 12px;
+}

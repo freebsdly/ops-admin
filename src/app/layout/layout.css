@@ -1,12 +1,12 @@
 .app-layout {
   display: flex;
   min-height: 100vh;
-  background-color: lightgray;
+  background-color: var(--app-layout-bg-color);
 }
 
 .app-layout-sider {
-  width: 200px;
-  overflow-y: auto;
+  width: var(--app-sider-width);
+  overflow-y: hidden;
 }
 
 .app-layout-main {
@@ -17,14 +17,14 @@
 }
 
 .app-layout-header {
-  height: 48px;
+  height: var(--app-header-height);
 }
 
 .app-layout-content {
   flex: 1;
-  padding: 12px;
+  padding: var(--app-content-padding);
 }
 
 .app-layout-footer {
-  height: 48px;
+  height: var(--app-footer-height);
 }
