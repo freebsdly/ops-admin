@@ -1,39 +1,30 @@
 .app-layout {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
   background-color: lightgray;
 }
 
-.app-layout-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 48px;
-  background-color: #f9fafb;
-}
-
-.app-layout-body {
-  display: flex;
-  margin-top: 64px;
-  min-height: calc(100vh - 64px);
-}
-
 .app-layout-sider {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  bottom: 0;
   width: 200px;
   overflow-y: auto;
-  background-color: #f3f4f6;
+}
+
+.app-layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-layout-header {
+  height: 48px;
 }
 
 .app-layout-content {
-  margin-left: 200px;
   flex: 1;
-  padding: 24px;
-  background-color: white;
+  padding: 12px;
+}
+
+.app-layout-footer {
+  height: 48px;
 }
