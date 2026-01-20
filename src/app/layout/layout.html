@@ -1,8 +1,12 @@
 <div class="app-layout">
-  <div class="app-layout-sider">
+  <div class="app-layout-sider" [class.collapsed]="collapsed()">
     <app-sider />
   </div>
-  <app-collapse-button (toggle)="toggleCollapsed()" class="app-layout-collapse-button" />
+  <app-collapse-button
+    (toggle)="toggleCollapsed()"
+    class="app-layout-collapse-button"
+    [class.collapsed]="collapsed()"
+  />
   <div class="app-layout-main">
     <div class="app-layout-header">
       <app-header />
