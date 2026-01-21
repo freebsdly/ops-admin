@@ -1,6 +1,15 @@
 @if (hasChildren()) {
-  <div class="app-sider-menu-group">
-    <div class="app-sider-menu-link" (click)="onClickExpand($event)">
+  <div
+    class="app-sider-menu-group"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+  >
+    <div
+      #menuLink
+      class="app-sider-menu-link"
+      [title]="item().label"
+      (click)="onClickExpand($event)"
+    >
       @if (item().icon) {
         <span class="app-sider-menu-icon">{{ item().icon }}</span>
       }
@@ -35,6 +44,7 @@
 } @else {
   <a
     class="app-sider-menu-link"
+    [title]="item().label"
     [routerLink]="item().path"
     routerLinkActive="app-sider-menu-link--active"
     (click)="onClickMenuItem($event)"
@@ -49,4 +59,55 @@
       }
     }
   </a>
+}
+
+@if (isCollapsed() && showPopup() && hasChildren()) {
+  <div
+    class="app-sider-menu-popup"
+    [style.top.px]="popupPosition().top"
+    [style.left.px]="popupPosition().left"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+  >
+    <ul class="app-sider-menu-popup-list">
+      @for (childItem of item().children; track childItem.label) {
+        <li class="app-sider-menu-popup-item">
+          @if (childItem.children) {
+            <div class="app-sider-menu-popup-label">
+              @if (childItem.icon) {
+                <span class="app-sider-menu-popup-icon">{{ childItem.icon }}</span>
+              }
+              <span>{{ childItem.label }}</span>
+              @if (childItem.badge) {
+                <span class="app-sider-menu-popup-badge">{{ childItem.badge }}</span>
+              }
+            </div>
+            <ul class="app-sider-menu-popup-sublist">
+              @for (grandchildItem of childItem.children; track grandchildItem.label) {
+                <li class="app-sider-menu-popup-subitem" (click)="onPopupItemClick(grandchildItem, $event)">
+                  @if (grandchildItem.icon) {
+                    <span class="app-sider-menu-popup-icon">{{ grandchildItem.icon }}</span>
+                  }
+                  <span>{{ grandchildItem.label }}</span>
+                  @if (grandchildItem.badge) {
+                    <span class="app-sider-menu-popup-badge">{{ grandchildItem.badge }}</span>
+                  }
+                </li>
+              }
+            </ul>
+          } @else {
+            <div class="app-sider-menu-popup-item-link" (click)="onPopupItemClick(childItem, $event)">
+              @if (childItem.icon) {
+                <span class="app-sider-menu-popup-icon">{{ childItem.icon }}</span>
+              }
+              <span>{{ childItem.label }}</span>
+              @if (childItem.badge) {
+                <span class="app-sider-menu-popup-badge">{{ childItem.badge }}</span>
+              }
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  </div>
 }

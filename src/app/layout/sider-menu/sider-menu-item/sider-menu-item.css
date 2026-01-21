@@ -1,4 +1,5 @@
 .app-sider-menu-group {
+  position: relative;
   margin: 4px 0;
 }
 
@@ -102,4 +103,83 @@
 
 .app-sider-menu-list.collapsed .app-sider-menu-icon {
   margin-right: 0;
+}
+
+/* Popup styles */
+.app-sider-menu-popup {
+  position: fixed;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  padding: 4px;
+}
+
+.app-sider-menu-popup-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-sider-menu-popup-item {
+  margin: 2px 0;
+}
+
+.app-sider-menu-popup-label {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.app-sider-menu-popup-icon {
+  margin-right: 8px;
+}
+
+.app-sider-menu-popup-badge {
+  margin-left: auto;
+  background-color: #ff4d4f;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 12px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.app-sider-menu-popup-sublist {
+  list-style: none;
+  margin: 4px 0 4px 12px;
+  padding: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-sider-menu-popup-subitem {
+  padding: 6px 12px 6px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.app-sider-menu-popup-subitem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.app-sider-menu-popup-item-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.app-sider-menu-popup-item-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
