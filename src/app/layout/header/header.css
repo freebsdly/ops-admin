@@ -1,6 +1,7 @@
 :host {
   display: block;
   height: var(--app-header-height);
+  overflow: visible;
 }
 
 .app-layout-header-inner {
@@ -8,6 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
+  position: relative;
 }
 
 .app-layout-header-text {
