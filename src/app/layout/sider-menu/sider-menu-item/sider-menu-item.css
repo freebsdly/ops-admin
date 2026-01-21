@@ -11,6 +11,7 @@
   text-decoration: none;
   transition: background-color 0.2s ease;
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -61,12 +62,33 @@
   list-style: none;
   margin: 4px 0;
   padding: 0;
+  position: relative;
 }
 
 .app-sider-menu-sublist--level-1 {
   padding-left: 16px;
 }
 
+.app-sider-menu-sublist--level-1::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .app-sider-menu-sublist--level-2 {
   padding-left: 24px;
+}
+
+.app-sider-menu-sublist--level-2::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
