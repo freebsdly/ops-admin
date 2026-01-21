@@ -1,6 +1,6 @@
 <div class="app-layout">
   <div class="app-layout-sider" [class.collapsed]="collapsed()">
-    <app-sider [isCollapsed]="collapsed()" />
+    <app-sider [isCollapsed]="collapsed()" [menuItems]="menuItems" />
   </div>
   <app-collapse-button
     [isCollapsed]="collapsed()"
