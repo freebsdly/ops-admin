@@ -1,0 +1,14 @@
+<div class="language-selector">
+  <button class="selector-trigger">
+    <ng-icon name="tablerLanguage" />
+    <span class="language-text">{{ selectedLanguage().name }}</span>
+  </button>
+  <div class="dropdown-menu">
+    @for (language of languages; track language.code) {
+      <button class="menu-item" [class.active]="selectedLanguage().code === language.code" (click)="selectLanguage(language)">
+        <span class="flag-emoji">{{ language.emoji }}</span>
+        <span>{{ language.name }}</span>
+      </button>
+    }
+  </div>
+</div>
