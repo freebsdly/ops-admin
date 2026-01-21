@@ -26,7 +26,6 @@ export class Layout {
         {
           label: 'All Users',
           path: '/users/all',
-          badge: 5,
         },
         {
           label: 'Groups',
