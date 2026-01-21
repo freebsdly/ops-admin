@@ -1,10 +1,11 @@
-<ul class="app-sider-menu-list">
+<ul class="app-sider-menu-list" [class.collapsed]="isCollapsed()">
   @for (item of menuItems(); track item.label) {
     <app-sider-menu-item
       [item]="item"
       [level]="1"
       [maxLevel]="maxLevel()"
       [expandedKeys]="expandedKeys()"
+      [isCollapsed]="isCollapsed()"
       (toggleExpand)="toggleExpand($event)"
       (menuSelect)="menuSelect.emit($event)"
     />

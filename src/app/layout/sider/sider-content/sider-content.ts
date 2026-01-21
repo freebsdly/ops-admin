@@ -10,4 +10,5 @@ import { SiderMenu, MenuItem } from '../../sider-menu/sider-menu';
 })
 export class SiderContent {
   readonly menuItems = input.required<MenuItem[]>();
+  readonly isCollapsed = input.required<boolean>();
 }

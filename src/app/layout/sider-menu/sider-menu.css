@@ -3,3 +3,7 @@
   margin: 0;
   padding: 8px;
 }
+
+.app-sider-menu-list.collapsed {
+  padding: 0;
+}

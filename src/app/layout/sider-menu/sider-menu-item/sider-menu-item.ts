@@ -13,6 +13,7 @@ export class SiderMenuItem {
   readonly level = input(1);
   readonly maxLevel = input(3);
   readonly expandedKeys = input.required<Set<string>>();
+  readonly isCollapsed = input.required<boolean>();
   readonly toggleExpand = output<string>();
   readonly menuSelect = output<MenuItem>();
 

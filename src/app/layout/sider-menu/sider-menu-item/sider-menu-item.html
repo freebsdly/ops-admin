@@ -4,17 +4,19 @@
       @if (item().icon) {
         <span class="app-sider-menu-icon">{{ item().icon }}</span>
       }
-      <span class="app-sider-menu-label">{{ item().label }}</span>
-      @if (item().badge) {
-        <span class="app-sider-menu-badge">{{ item().badge }}</span>
+      @if (!isCollapsed()) {
+        <span class="app-sider-menu-label">{{ item().label }}</span>
+        @if (item().badge) {
+          <span class="app-sider-menu-badge">{{ item().badge }}</span>
+        }
+        <span class="app-sider-menu-expand-icon" [class.expanded]="isExpanded()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
       }
-      <span class="app-sider-menu-expand-icon" [class.expanded]="isExpanded()">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
     </div>
-    @if (isExpanded() && level() < maxLevel()) {
+    @if (isExpanded() && level() < maxLevel() && !isCollapsed()) {
       <ul class="app-sider-menu-sublist" [class.app-sider-menu-sublist--level-1]="level() === 1" [class.app-sider-menu-sublist--level-2]="level() === 2">
         @for (childItem of item().children; track childItem.label) {
           <app-sider-menu-item
@@ -22,6 +24,7 @@
             [level]="level() + 1"
             [maxLevel]="maxLevel()"
             [expandedKeys]="expandedKeys()"
+            [isCollapsed]="isCollapsed()"
             (toggleExpand)="toggleExpand.emit($event)"
             (menuSelect)="menuSelect.emit($event)"
           />
@@ -39,9 +42,11 @@
     @if (item().icon) {
       <span class="app-sider-menu-icon">{{ item().icon }}</span>
     }
-    <span class="app-sider-menu-label">{{ item().label }}</span>
-    @if (item().badge) {
-      <span class="app-sider-menu-badge">{{ item().badge }}</span>
+    @if (!isCollapsed()) {
+      <span class="app-sider-menu-label">{{ item().label }}</span>
+      @if (item().badge) {
+        <span class="app-sider-menu-badge">{{ item().badge }}</span>
+      }
     }
   </a>
 }
