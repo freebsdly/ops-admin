@@ -1,0 +1,47 @@
+@if (hasChildren()) {
+  <div class="menu-group">
+    <div class="menu-link" (click)="onClickExpand($event)">
+      @if (item().icon) {
+        <span class="menu-icon">{{ item().icon }}</span>
+      }
+      <span class="menu-label">{{ item().label }}</span>
+      @if (item().badge) {
+        <span class="menu-badge">{{ item().badge }}</span>
+      }
+      <span class="menu-expand-icon" [class.expanded]="isExpanded()">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    @if (isExpanded() && level() < maxLevel()) {
+      <ul class="menu-sublist" [class.level-1]="level() === 1" [class.level-2]="level() === 2">
+        @for (childItem of item().children; track childItem.label) {
+          <app-sider-menu-item
+            [item]="childItem"
+            [level]="level() + 1"
+            [maxLevel]="maxLevel()"
+            [expandedKeys]="expandedKeys()"
+            (toggleExpand)="toggleExpand.emit($event)"
+            (menuSelect)="menuSelect.emit($event)"
+          />
+        }
+      </ul>
+    }
+  </div>
+} @else {
+  <a
+    class="menu-link"
+    [routerLink]="item().path"
+    routerLinkActive="menu-link--active"
+    (click)="onClickMenuItem($event)"
+  >
+    @if (item().icon) {
+      <span class="menu-icon">{{ item().icon }}</span>
+    }
+    <span class="menu-label">{{ item().label }}</span>
+    @if (item().badge) {
+      <span class="menu-badge">{{ item().badge }}</span>
+    }
+  </a>
+}

@@ -20,15 +20,51 @@ export class Layout {
       path: '/dashboard',
     },
     {
-      label: 'Users',
+      label: 'User Management',
       icon: '👥',
-      path: '/users',
-      badge: 5,
+      children: [
+        {
+          label: 'All Users',
+          path: '/users/all',
+          badge: 5,
+        },
+        {
+          label: 'Groups',
+          path: '/users/groups',
+          children: [
+            {
+              label: 'Admin Group',
+              path: '/users/groups/admin',
+            },
+            {
+              label: 'User Group',
+              path: '/users/groups/user',
+            },
+            {
+              label: 'Guest Group',
+              path: '/users/groups/guest',
+            },
+          ],
+        },
+        {
+          label: 'Permissions',
+          path: '/users/permissions',
+        },
+      ],
     },
     {
-      label: 'Settings',
+      label: 'System',
       icon: '⚙️',
-      path: '/settings',
+      children: [
+        {
+          label: 'Settings',
+          path: '/system/settings',
+        },
+        {
+          label: 'Logs',
+          path: '/system/logs',
+        },
+      ],
     },
   ];
 
