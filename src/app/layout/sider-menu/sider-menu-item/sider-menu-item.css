@@ -1,8 +1,8 @@
-.menu-group {
+.app-sider-menu-group {
   margin: 4px 0;
 }
 
-.menu-link {
+.app-sider-menu-link {
   display: flex;
   align-items: center;
   padding: 10px 12px;
@@ -14,16 +14,16 @@
   user-select: none;
 }
 
-.menu-link:hover {
+.app-sider-menu-link:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-.menu-link--active {
+.app-sider-menu-link--active {
   background-color: rgba(0, 0, 0, 0.08);
   font-weight: 500;
 }
 
-.menu-icon {
+.app-sider-menu-icon {
   margin-right: 8px;
   display: flex;
   align-items: center;
@@ -32,11 +32,11 @@
   height: 20px;
 }
 
-.menu-label {
+.app-sider-menu-label {
   flex: 1;
 }
 
-.menu-badge {
+.app-sider-menu-badge {
   background-color: #ff4d4f;
   color: #fff;
   border-radius: 10px;
@@ -46,27 +46,27 @@
   text-align: center;
 }
 
-.menu-expand-icon {
+.app-sider-menu-expand-icon {
   margin-left: 8px;
   transition: transform 0.2s ease;
   display: flex;
   align-items: center;
 }
 
-.menu-expand-icon.expanded {
+.app-sider-menu-expand-icon.expanded {
   transform: rotate(180deg);
 }
 
-.menu-sublist {
+.app-sider-menu-sublist {
   list-style: none;
   margin: 4px 0;
   padding: 0;
 }
 
-.menu-sublist.level-1 {
+.app-sider-menu-sublist--level-1 {
   padding-left: 16px;
 }
 
-.menu-sublist.level-2 {
+.app-sider-menu-sublist--level-2 {
   padding-left: 24px;
 }
