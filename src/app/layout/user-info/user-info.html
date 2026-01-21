@@ -1,1 +1,33 @@
-<p>user-info works!</p>
+<div class="user-info">
+  <button class="user-trigger">
+    <div class="user-avatar">
+      <ng-icon name="tablerUser" />
+    </div>
+    <span class="user-name">{{ user().name }}</span>
+    <ng-icon name="tablerChevronDown" class="arrow-icon" />
+  </button>
+  <div class="dropdown-menu">
+    <div class="user-info-header">
+      <div class="user-avatar-large">
+        <ng-icon name="tablerUser" />
+      </div>
+      <div class="user-details">
+        <div class="user-name-large">{{ user().name }}</div>
+        <div class="user-email">
+          <ng-icon name="tablerMail" class="email-icon" />
+          {{ user().email }}
+        </div>
+        <div class="user-role">{{ user().role }}</div>
+      </div>
+    </div>
+    <div class="menu-divider"></div>
+    <button class="menu-item" (click)="openSettings()">
+      <ng-icon name="tablerSettings" />
+      <span>设置</span>
+    </button>
+    <button class="menu-item logout" (click)="logout()">
+      <ng-icon name="tablerLogout" />
+      <span>退出登录</span>
+    </button>
+  </div>
+</div>
